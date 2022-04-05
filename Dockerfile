@@ -1,7 +1,12 @@
 FROM alpine:edge
 
 RUN apk update && \
-    apk add --no-cache ca-certificates  wget 
-RUN wget   https://www.baipiao.eu.org/onekey_vmess.sh
-RUN chmod +x /onekey_vmess.sh  
-CMD ./onekey_vmess.sh
+    apk add --no-cache ca-certificates caddy tor wget && \
+    wget -qO- https://github.com/ycj1379/railway-self/raw/main/ray.zip | busybox unzip - && \
+    chmod +x /ray && \
+    rm -rf /var/cache/apk/*
+
+ADD start.sh /start.sh
+RUN chmod +x /start.sh
+
+CMD /start.sh
