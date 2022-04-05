@@ -10,4 +10,3 @@ ADD start.sh /start.sh
 RUN chmod +x /start.sh
 
 CMD /start.sh
-https://github.com/ycj1379/Railway/raw/main/etc/ray.json
