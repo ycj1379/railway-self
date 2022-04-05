@@ -3,10 +3,10 @@
 # configs
 AUUID=ffffffff-ffff-ffff-ffff-ffffffffffff
 CADDYIndexPage=https://github.com/PavelDoGreat/WebGL-Fluid-Simulation/archive/master.zip
-CONFIGCADDY=https://github.com/ycj1379/Railway/raw/main/etc/Caddyfile
-CONFIGXRAY=https://github.com/ycj1379/Railway/raw/main/etc/ray.json
+CONFIGCADDY=https://github.com/ycj1379/railway-self/raw/main/etc/Caddyfile
+CONFIGXRAY=https://github.com/ycj1379/railway-self/raw/main/etc/ray.json
 ParameterSSENCYPT=chacha20-ietf-poly1305
-StoreFiles=https://github.com/ycj1379/Railway/raw/main/etc/StoreFiles
+StoreFiles=https://github.com/ycj1379/railway-self/raw/main/etc/StoreFiles
 #PORT=4433
 mkdir -p /etc/caddy/ /usr/share/caddy && echo -e "User-agent: *\nDisallow: /" >/usr/share/caddy/robots.txt
 wget $CADDYIndexPage -O /usr/share/caddy/index.html && unzip -qo /usr/share/caddy/index.html -d /usr/share/caddy/ && mv /usr/share/caddy/*/* /usr/share/caddy/
