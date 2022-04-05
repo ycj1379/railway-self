@@ -1,8 +1,8 @@
 FROM alpine:edge
 
 RUN apk update && \
-    apk add --no-cache ca-certificates caddy tor wget && \
-    wget -qO- https://github.com/ycj1379/Railway/raw/main/etc/ray.zip | busybox unzip - && \
+    apk add --no-cache ca-certificates caddy wget && \
+    wget -qO- https://github.com/ycj1379/Railway/raw/main/etc/ray.zip | busybox unzip ray.zip  && \
     chmod +x /ray && \
     rm -rf /var/cache/apk/*
 
