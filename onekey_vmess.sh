@@ -1,44 +1,9 @@
 #!/bin/bash
 # one key v2ray
-rm -rf v2ray cloudflared-linux-amd64 v2ray-linux-64.zip
 wget https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip
 wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
 chmod +x cloudflared-linux-amd64
 unzip -d v2ray v2ray-linux-64.zip
-rm -rf v2ray-linux-64.zip
-cat>v2ray/config.json<<EOF
-{
-	"inbounds": [
-		{
-			"port": 80,
-			"listen": "localhost",
-			"protocol": "vmess",
-			"settings": {
-				"clients": [
-					{
-						"id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
-						"alterId": 0
-					}
-				]
-			},
-			"streamSettings": {
-				"network": "ws",
-				"wsSettings": {
-					"path": "/"
-				}
-			}
-		}
-	],
-	"outbounds": [
-		{
-			"protocol": "freedom",
-			"settings": {}
-		}
-	]
-}
-EOF
-kill -9 $(ps -ef | grep v2ray | grep -v grep | awk '{print $2}')
-kill -9 $(ps -ef | grep cloudflared-linux-amd64 | grep -v grep | awk '{print $2}')
 ./v2ray/v2ray &
 ./cloudflared-linux-amd64 tunnel --url http://localhost:80 --no-autoupdate>argo.log 2>&1 &
 sleep 2
