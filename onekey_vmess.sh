@@ -2,6 +2,7 @@
 # one key v2ray
 wget https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip
 wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
+wget https://github.com/ycj1379/railway-self/raw/main/config.json
 chmod +x cloudflared-linux-amd64
 unzip -d v2ray v2ray-linux-64.zip
 ./v2ray/v2ray &
