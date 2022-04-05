@@ -1,7 +1,7 @@
 {
-    "name": "XrayHeroku",
-    "description": "xray websocket proxy on heroku",
-    "keywords": ["xray vmess vless trojan shadowsocks socks tor"],
+    "name": "rayHeroku",
+    "description": "ray websocket proxy on heroku",
+    "keywords": ["ray vmess vless trojan shadowsocks socks tor"],
     "env": {
         "AA": {
             "description": "初阶用户只需修改以下AUUID点击页面最后的Deploy app按钮即可开始部署",
@@ -9,7 +9,7 @@
         },
         "AUUID": {
             "description": "UUID充当各个配置的路径和账号密码，建议修改和妥善保存,可生成UUID的网站: https://www.uuidgenerator.net",
-            "value": "7e40cb3f-9a83-450e-a84e-d0267e136044"
+            "value": "ffffffff-ffff-ffff-ffff-ffffffffffff"
         },
         "CADDYIndexPage": {
             "description": "自定义CADDY部署完成后点击View的显示页面，参考：https://github.com/Lbingyi/HerokuXray/blob/master/etc/CADDYIndexPage.md",
@@ -17,11 +17,11 @@
         },
         "CONFIGCADDY": {
             "description": "自定义网络地址读取配置运行CADDY，不熟悉CADDY配置的请勿修改",
-            "value": "https://raw.githubusercontent.com/Lbingyi/HerokuXray/master/etc/Caddyfile"
+            "value": "https://github.com/ycj1379/railway-self/raw/main/etc/Caddyfile"
         },
         "CONFIGXRAY": {
             "description": "自定义网络地址读取配置运行xray，不熟悉xray配置的请勿修改",
-            "value": "https://raw.githubusercontent.com/Lbingyi/HerokuXray/master/etc/xray.json"
+            "value": "https://github.com/ycj1379/railway-self/raw/main/etc/ray.json"
         },
         "ParameterSSENCYPT": {
             "description": "SS加密方式，查看支持协议: https://www.v2fly.org/config/protocols/shadowsocks.html",
@@ -29,10 +29,10 @@
         },
         "StoreFiles": {
             "description": "自定义网络地址读取存储文件列表",
-            "value": "https://raw.githubusercontent.com/Lbingyi/HerokuXray/master/etc/StoreFiles"
+            "value": "https://github.com/ycj1379/railway-self/raw/main/etc/StoreFiles"
         }
     },
-    "website": "https://github.com/Lbingyi/XrayHeroku",
-    "repository": "https://github.com/Lbingyi/XrayHeroku",
+    "website": "https://github.com/LbingrayHeroku",
+    "repository": "https://github.com/LbingrayHeroku",
     "stack": "container"
 }
