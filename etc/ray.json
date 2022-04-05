@@ -6,6 +6,11 @@
             "settings": {"clients": [{"id": "$AUUID"}]},
             "streamSettings": {"network": "ws","wsSettings": {"path": "/$AUUID-vmess"}}
         },
+		{
+            "listen": "/etc/caddy/vless","protocol": "vless",
+            "settings": {"clients": [{"id": "$AUUID"}],"decryption": "none"},
+            "streamSettings": {"network": "ws","wsSettings": {"path": "/$AUUID-vless"}}
+        },
     ],
     
     "outbounds": 
