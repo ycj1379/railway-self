@@ -9,13 +9,10 @@ header {
     Referrer-Policy no-referrer-when-downgrade
 }
 
-basicauth /$AUUID/* {
-    $AUUID $MYUUID-HASH
-}
 
 @websocket_ray_vmess {
 header Connection *Upgrade*
 header Upgrade    websocket
-path /$AUUID-vmess
+path /f/
 }
 reverse_proxy @websocket_ray_vmess unix//etc/caddy/vmess
