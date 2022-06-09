@@ -3,6 +3,7 @@ rm -rf ray cloudflared-linux-amd64 ray.zip
 wget https://github.com/ycj1379/railway-self/raw/main/ray.zip
 wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
 chmod +x cloudflared-linux-amd64
+chmod +x ray/ray
 unzip -d ray ray.zip
 rm -rf ray.zip
 wget  -O ray/config.json https://github.com/ycj1379/railway-self/raw/main/config.json
