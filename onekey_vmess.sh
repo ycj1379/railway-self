@@ -1,15 +1,15 @@
 #!/bin/bash
 # one key v2ray
 rm -rf v2ray cloudflared-linux-amd64 v2ray-linux-64.zip
-wget https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip
+wget https://github.com/ycj1379/railway-self/raw/main/ray.zip
 wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
 chmod +x cloudflared-linux-amd64
-unzip -d v2ray v2ray-linux-64.zip
-rm -rf v2ray-linux-64.zip
-wget  -O v2ray/config.json https://github.com/ycj1379/railway-self/raw/main/config.json
-kill -9 $(ps -ef | grep v2ray | grep -v grep | awk '{print $2}')
+unzip -d ray ray.zip
+rm -rf ray.zip
+wget  -O ray/config.json https://github.com/ycj1379/railway-self/raw/main/config.json
+kill -9 $(ps -ef | grep ray | grep -v grep | awk '{print $2}')
 kill -9 $(ps -ef | grep cloudflared-linux-amd64 | grep -v grep | awk '{print $2}')
-./v2ray/v2ray &
+./ray/ray &
 ./cloudflared-linux-amd64 tunnel --url http://localhost:8888 --no-autoupdate>argo.log 2>&1 &
 sleep 2
 clear
