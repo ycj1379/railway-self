@@ -10,7 +10,6 @@ wget  -O ray/config.json https://github.com/ycj1379/railway-self/raw/main/config
 ray/ray &
 ./cloudflared-linux-amd64 tunnel --url http://localhost:8888 --no-autoupdate>argo.log 2>&1 &
 sleep 2
-clear
 echo 等到cloudflare argo生成地址
 sleep 3
 argo=$(cat argo.log | grep trycloudflare.com | awk 'NR==2{print}' | awk -F// '{print $2}' | awk '{print $1}')
