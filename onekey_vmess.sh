@@ -16,3 +16,4 @@ argo=$(cat argo.log | grep trycloudflare.com | awk 'NR==2{print}' | awk -F// '{p
 clear
 echo vmess链接已经生成,IP地址可替换为CF优选IP
 echo 'vmess://'$(echo '{"add":"66.235.200.230","aid":"0","host":"'$argo'","id":"ffffffff-ffff-ffff-ffff-ffffffffffff","net":"ws","path":"","port":"443","ps":"argo v2ray","tls":"tls","type":"none","v":"2"}' | base64 -w 0)
+cat argo.log
